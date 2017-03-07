@@ -5,6 +5,7 @@
         <div class="modal-close">
           <span @click="show=false">X</span>
         </div>
+        <p>show Modal: {{ show }}</p>
         <slot name="body"></slot>
         <slot name="footer"></slot>
       </div>
@@ -13,12 +14,6 @@
 </template>
 <script>
 module.exports = {
-  // props: {
-  //   show: {
-  //     type: Boolean,
-  //     default: false
-  //   }
-  // },
   stores: {
     show: 'state.showModal'
   }

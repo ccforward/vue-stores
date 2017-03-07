@@ -7,13 +7,23 @@ Vue.use(stores)
 
 Vue.config.productionTip = false
 
+Vue.config.devtools = true
+
 new Vue({
   el: '#app',
   template: '<App/>',
   components: { App },
   data: {
     state: {
-      showModal: false
+      showModal: false,
+      global: {
+        txt: 'shared Text'
+      }
+    }
+  },
+  methods: {
+    toast(){
+      alert('this is a shared method')
     }
   }
 })
