@@ -1,14 +1,16 @@
 {
   "name": "vue-stores",
   "version": "1.0.0",
-  "description": "desc",
+  "description": "Share the root states and methods in every components.",
   "main": "index.js",
   "scripts": {
     "dev": "node build/dev-server.js",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "compile": "babel source.js --out-file index.js"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
+    "babel-cli": "^6.23.0",
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-runtime": "^6.22.0",
@@ -20,7 +22,7 @@
     "chalk": "^1.1.3",
     "connect-history-api-fallback": "^1.3.0",
     "copy-webpack-plugin": "^4.0.1",
-    "css-loader": "^0.26.1",
+    "css-loader": "^0.27.1",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.14.1",
     "extract-text-webpack-plugin": "^2.0.0",
@@ -34,6 +36,8 @@
     "ora": "^1.1.0",
     "rimraf": "^2.6.0",
     "semver": "^5.3.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
     "url-loader": "^0.5.7",
     "vue": "^2.2.2",
     "vue-loader": "^11.1.4",

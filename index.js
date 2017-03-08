@@ -1,54 +1,54 @@
-const plugin = function(Vue) {
+var plugin = function plugin(Vue) {
   return Vue.mixin({
-    beforeCreate() {
-      return initStore(this)
+    beforeCreate: function beforeCreate() {
+      return initStore(this);
     }
   });
-}
-const initStore = function(vm) { 
+};
+var initStore = function initStore(vm) {
   if (vm.$options.stores != null) {
     if (vm.$options.computed == null) {
-      vm.$options.computed = {}
+      vm.$options.computed = {};
     }
     if (Array.isArray(vm.$options.stores)) {
-      return vm.$options.stores.forEach(function(property) {
-        return vm.$options.computed[property] = new Computer(property)
-      })
+      return vm.$options.stores.forEach(function (property) {
+        return vm.$options.computed[property] = new Computer(property);
+      });
     } else {
-      const states = []
-      for (let key in vm.$options.stores) {
+      var states = [];
+      for (var key in vm.$options.stores) {
         if (typeof vm.$options.stores[key] === 'function') {
-          states.push(vm.$options.computed[key] = new Computer(vm.$options.stores[key]()))
+          states.push(vm.$options.computed[key] = new Computer(vm.$options.stores[key]()));
         } else if (typeof vm.$options.stores[key] === 'string') {
-          states.push(vm.$options.computed[key] = new Computer(vm.$options.stores[key]))
+          states.push(vm.$options.computed[key] = new Computer(vm.$options.stores[key]));
         } else {
-          states.push(null)
+          states.push(null);
         }
       }
-      return states
+      return states;
     }
   }
-}
-const Computer = function(key) {
+};
+var Computer = function Computer(key) {
   return {
-    get() {
-      return key.split('.').reduce( (k, v) => {
-        return k[v]
-      }, this.$root)
+    get: function get() {
+      return key.split('.').reduce(function (k, v) {
+        return k[v];
+      }, this.$root);
     },
-    set(val) {
-      const objArr = key.split('.')
-      const len = objArr.length - 1
-      let i = 0
-      let j = 0
-      let root = this.$root
+    set: function set(val) {
+      var objArr = key.split('.');
+      var len = objArr.length - 1;
+      var i = 0;
+      var j = 0;
+      var root = this.$root;
       for (; 0 <= len ? j < len : j > len; i = 0 <= len ? ++j : --j) {
         if (root.hasOwnProperty(objArr[i])) {
-          root = root[objArr[i]]
+          root = root[objArr[i]];
         }
       }
-      return root[objArr[i]] = val
+      return root[objArr[i]] = val;
     }
-  }
-}
-export default plugin
+  };
+};
+export default plugin;
