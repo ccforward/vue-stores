@@ -23,7 +23,7 @@ new Vue({
   },
   methods: {
     toast(){
-      alert('this is a shared method')
+      alert(this.state.global.txt)
     }
   }
 })

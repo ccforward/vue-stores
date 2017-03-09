@@ -1,15 +1,20 @@
 <template>
   <footer>
+    <slot></slot>
     <div>
       <input type="text" v-model="bottomTxt">
     </div>
-    <slot></slot>
+    <Other/>
   </footer>
 </template>
 
 <script>
+import Other from './Other'
 export default {
-  name: 'top',
+  name: 'bottom',
+  components: {
+    Other,
+  },
   stores: {
     bottomTxt: 'state.global.txt'
   }

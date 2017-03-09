@@ -3,6 +3,7 @@
     <Top>
       <p>Top Component</p>
     </Top>
+    <a href="https://github.com/ccforward/vue-stores/">vue-stores</a>
     <section class="content">
       <p class="desc">show Modal: <span><b>{{ modal }}</b></span></p>
       <button @click="toggle">toggle Modal</button>
@@ -13,7 +14,7 @@
       </Modal>
       <div class="desc">
         <p>shared Method:</p>
-        <button @click="toast">Method</button>
+        <button @click="alert">Method</button>
       </div>
       <p class="desc">This a global shared data which can be used in every component</p>
       <div>
@@ -38,11 +39,6 @@ export default {
     Top,
     Bottom
   },
-  data(){
-    return {
-      txt1: 'text'
-    }
-  },
   methods: {
     toggle(){
       this.modal = !this.modal
@@ -51,7 +47,7 @@ export default {
   stores: {
     txt: 'state.global.txt',
     modal: 'state.showModal',
-    toast(){
+    alert(){
       return 'toast'
     }
   }
