@@ -2,6 +2,8 @@
 
 Share the root states and methods in every component.
 
+[详细说明](https://github.com/ccforward/cc/issues/62)
+
 ## GitHub
 
 [https://github.com/ccforward/vue-stores](https://github.com/ccforward/vue-stores)
