@@ -1,7 +1,7 @@
 {
   "name": "vue-stores",
-  "version": "1.0.0",
-  "description": "Share the root states and methods in every components.",
+  "version": "1.0.2",
+  "description": "Share the root states and methods in every component.",
   "main": "index.js",
   "scripts": {
     "dev": "node build/dev-server.js",
